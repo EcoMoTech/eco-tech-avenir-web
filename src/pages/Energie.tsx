@@ -2,7 +2,7 @@
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { SolarPanel, Battery, Water, LampFloor } from "lucide-react";
+import { Sun, Battery, CloudSun, LampFloor } from "lucide-react";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -34,7 +34,7 @@ const Energie = () => {
             <Tabs defaultValue="home" className="w-full max-w-6xl mx-auto">
               <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8">
                 <TabsTrigger value="home" className="flex flex-col md:flex-row items-center gap-2">
-                  <SolarPanel className="h-5 w-5" />
+                  <Sun className="h-5 w-5" />
                   <span>Systèmes Résidentiels</span>
                 </TabsTrigger>
                 <TabsTrigger value="battery" className="flex flex-col md:flex-row items-center gap-2">
@@ -46,7 +46,7 @@ const Energie = () => {
                   <span>Éclairage Solaire</span>
                 </TabsTrigger>
                 <TabsTrigger value="pumps" className="flex flex-col md:flex-row items-center gap-2">
-                  <Water className="h-5 w-5" />
+                  <CloudSun className="h-5 w-5" />
                   <span>Pompes Solaires</span>
                 </TabsTrigger>
               </TabsList>
