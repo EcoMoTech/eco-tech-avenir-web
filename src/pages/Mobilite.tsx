@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bike, Tricycle, Plug, EvCharging } from "lucide-react";
+import { Bike, Recycle, Plug, Battery } from "lucide-react";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -38,7 +37,7 @@ const Mobilite = () => {
                   <span>Motos Électriques</span>
                 </TabsTrigger>
                 <TabsTrigger value="tricycles" className="flex flex-col md:flex-row items-center gap-2">
-                  <Tricycle className="h-5 w-5" />
+                  <Recycle className="h-5 w-5" />
                   <span>Tricycles Électriques</span>
                 </TabsTrigger>
                 <TabsTrigger value="homechargers" className="flex flex-col md:flex-row items-center gap-2">
@@ -46,7 +45,7 @@ const Mobilite = () => {
                   <span>Chargeurs Domestiques</span>
                 </TabsTrigger>
                 <TabsTrigger value="stations" className="flex flex-col md:flex-row items-center gap-2">
-                  <EvCharging className="h-5 w-5" />
+                  <Battery className="h-5 w-5" />
                   <span>Stations de Recharge</span>
                 </TabsTrigger>
               </TabsList>
