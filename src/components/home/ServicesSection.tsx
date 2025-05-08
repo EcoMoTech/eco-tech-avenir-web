@@ -1,41 +1,56 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { ArrowRight, Home, Building2, Battery, Wrench } from 'lucide-react';
+import { ArrowRight, Sun, Battery, Wrench, Leaf, BatteryCharging } from 'lucide-react';
 
 const services = [
   {
     id: 1,
-    title: "Solutions Résidentielles",
-    description: "Systèmes photovoltaïques, batteries et onduleurs pour votre maison.",
+    title: "Installation Photovoltaïque",
+    description: "Solutions photovoltaïques sur mesure pour votre maison ou entreprise.",
     image: "https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "/energie/residentiel",
-    icon: <Home className="w-6 h-6" />
+    link: "/services/installation-photovoltaique",
+    icon: <Sun className="w-6 h-6" />
   },
   {
     id: 2,
-    title: "Solutions Commerciales",
-    description: "Installations sur mesure pour entreprises et optimisation énergétique.",
+    title: "Maintenance de Centrales Solaires",
+    description: "Services de maintenance et d'entretien pour installations photovoltaïques à grande échelle.",
     image: "https://images.unsplash.com/photo-1566093097221-ac2335b09e70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "/energie/commercial",
-    icon: <Building2 className="w-6 h-6" />
+    link: "/services/maintenance-centrales",
+    icon: <Sun className="w-6 h-6" />
   },
   {
     id: 3,
-    title: "Mobilité Électrique",
-    description: "Véhicules électriques et infrastructures de recharge adaptées à vos besoins.",
+    title: "Installation de Bornes de Recharge",
+    description: "Solutions de recharge pour véhicules électriques adaptées à votre domicile ou entreprise.",
     image: "https://images.unsplash.com/photo-1593941707882-a56bba8b4b76?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "/mobilite",
-    icon: <Battery className="w-6 h-6" />
+    link: "/services/bornes-recharge",
+    icon: <BatteryCharging className="w-6 h-6" />
   },
   {
     id: 4,
-    title: "Services & Maintenance",
-    description: "Installation, maintenance et conseil pour toutes vos installations.",
+    title: "Réparation de Véhicules Électriques",
+    description: "Service de réparation et maintenance pour tous types de véhicules électriques.",
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "/services",
+    link: "/services/reparation-vehicules",
     icon: <Wrench className="w-6 h-6" />
+  },
+  {
+    id: 5,
+    title: "Conseil en Photovoltaïque",
+    description: "Services d'expertise et de conseil pour optimiser votre projet photovoltaïque.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    link: "/services/conseil-photovoltaique",
+    icon: <Sun className="w-6 h-6" />
+  },
+  {
+    id: 6,
+    title: "Audit d'Efficacité Énergétique",
+    description: "Évaluations détaillées et recommandations pour améliorer l'efficacité énergétique.",
+    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    link: "/services/audit-efficacite",
+    icon: <Leaf className="w-6 h-6" />
   }
 ];
 
