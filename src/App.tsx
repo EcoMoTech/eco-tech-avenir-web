@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import AboutUs from "./pages/AboutUs";
 import Energie from "./pages/Energie";
 import Mobilite from "./pages/Mobilite";
+import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
 
 // Service pages
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/a-propos" element={<AboutUs />} />
           <Route path="/energie" element={<Energie />} />
           <Route path="/mobilite" element={<Mobilite />} />
+          <Route path="/services" element={<Services />} />
           
           {/* Service Routes */}
           <Route path="/services/installation-photovoltaique" element={<InstallationPhotovoltaique />} />

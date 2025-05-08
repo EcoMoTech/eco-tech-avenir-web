@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ServiceLayout from '@/components/ServiceLayout';
-import { Sun, Check, Shield, BarChart3 } from 'lucide-react';
+import { Sun, Check, Shield, BarChart3, Wrench } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const MaintenanceCentrales = () => {
