@@ -1,10 +1,10 @@
-
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Sun, Battery, CloudSun, LampFloor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SOLAR_PANELS, BATTERY_STORAGE } from '@/assets/placeholders';
@@ -60,31 +60,31 @@ const Energie = () => {
             </div>
             
             <Tabs defaultValue="home" className="w-full max-w-6xl mx-auto">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-12 bg-gray-100/50 p-1.5 rounded-xl">
+              <TabsList className="grid grid-cols-2 gap-2 mb-12 bg-gray-100/50 p-1.5 rounded-xl">
                 <TabsTrigger 
                   value="home" 
-                  className="flex flex-col md:flex-row items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300"
+                  className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300"
                 >
                   <Sun className="h-5 w-5 text-eco-green" />
                   <span>Systèmes Résidentiels</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="battery" 
-                  className="flex flex-col md:flex-row items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300"
+                  className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300"
                 >
                   <Battery className="h-5 w-5 text-eco-green" />
                   <span>Stockage d'Énergie</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="streets" 
-                  className="flex flex-col md:flex-row items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300"
+                  className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300"
                 >
                   <LampFloor className="h-5 w-5 text-eco-green" />
                   <span>Éclairage Solaire</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="pumps" 
-                  className="flex flex-col md:flex-row items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300"
+                  className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300"
                 >
                   <CloudSun className="h-5 w-5 text-eco-green" />
                   <span>Pompes Solaires</span>
@@ -120,7 +120,9 @@ const Energie = () => {
                         </ul>
                       </CardContent>
                       <CardFooter className="pt-2">
-                        <Button className="bg-eco-green hover:bg-eco-green/90">En savoir plus</Button>
+                        <Button asChild className="bg-eco-green hover:bg-eco-green/90">
+                          <Link to="/energie/systemes-residentiels">En savoir plus</Link>
+                        </Button>
                       </CardFooter>
                     </Card>
                   </div>
@@ -170,7 +172,9 @@ const Energie = () => {
                         </ul>
                       </CardContent>
                       <CardFooter className="pt-2">
-                        <Button className="bg-eco-blue hover:bg-eco-blue/90">En savoir plus</Button>
+                        <Button asChild className="bg-eco-blue hover:bg-eco-blue/90">
+                          <Link to="/energie/stockage-energie">En savoir plus</Link>
+                        </Button>
                       </CardFooter>
                     </Card>
                   </div>
@@ -206,7 +210,9 @@ const Energie = () => {
                         </ul>
                       </CardContent>
                       <CardFooter className="pt-2">
-                        <Button className="bg-eco-green hover:bg-eco-green/90">En savoir plus</Button>
+                        <Button asChild className="bg-eco-green hover:bg-eco-green/90">
+                          <Link to="/energie/eclairage-solaire">En savoir plus</Link>
+                        </Button>
                       </CardFooter>
                     </Card>
                   </div>
@@ -256,7 +262,9 @@ const Energie = () => {
                         </ul>
                       </CardContent>
                       <CardFooter className="pt-2">
-                        <Button className="bg-eco-blue hover:bg-eco-blue/90">En savoir plus</Button>
+                        <Button asChild className="bg-eco-blue hover:bg-eco-blue/90">
+                          <Link to="/energie/pompes-solaires">En savoir plus</Link>
+                        </Button>
                       </CardFooter>
                     </Card>
                   </div>

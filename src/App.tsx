@@ -20,6 +20,12 @@ import ReparationVehicules from "./pages/services/ReparationVehicules";
 import ConseilPhotovoltaique from "./pages/services/ConseilPhotovoltaique";
 import AuditEfficacite from "./pages/services/AuditEfficacite";
 
+// Energy solution pages
+import SystemesResidentiels from "./pages/energie/SystemesResidentiels";
+import StockageEnergie from "./pages/energie/StockageEnergie";
+import EclairageSolaire from "./pages/energie/EclairageSolaire";
+import PompesSolaires from "./pages/energie/PompesSolaires";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -43,6 +49,12 @@ const App = () => (
           <Route path="/services/reparation-vehicules" element={<ReparationVehicules />} />
           <Route path="/services/conseil-photovoltaique" element={<ConseilPhotovoltaique />} />
           <Route path="/services/audit-efficacite" element={<AuditEfficacite />} />
+          
+          {/* Energy Solution Routes */}
+          <Route path="/energie/systemes-residentiels" element={<SystemesResidentiels />} />
+          <Route path="/energie/stockage-energie" element={<StockageEnergie />} />
+          <Route path="/energie/eclairage-solaire" element={<EclairageSolaire />} />
+          <Route path="/energie/pompes-solaires" element={<PompesSolaires />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
