@@ -1,17 +1,50 @@
 
 import React from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bike, Recycle, Plug, Battery } from "lucide-react";
+import { Link } from 'react-router-dom';
+import { Bike, Recycle, Plug, Battery, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const Mobilite = () => {
+  // Mobility solutions data
+  const mobilitySolutions = [
+    {
+      title: "Motos Électriques",
+      description: "Découvrez nos motos électriques performantes et écologiques",
+      icon: <Bike className="h-10 w-10 text-white" />,
+      color: "from-eco-green to-eco-green/70",
+      link: "/mobilite/motos-electriques"
+    },
+    {
+      title: "Tricycles Électriques",
+      description: "Des solutions de transport stables et pratiques pour tous",
+      icon: <Recycle className="h-10 w-10 text-white" />,
+      color: "from-eco-blue to-eco-blue/70",
+      link: "/mobilite/tricycles-electriques"
+    },
+    {
+      title: "Chargeurs Domestiques",
+      description: "Solutions de recharge personnelles pour votre domicile",
+      icon: <Plug className="h-10 w-10 text-white" />,
+      color: "from-eco-green to-eco-green/70",
+      link: "/mobilite/chargeurs-domestiques"
+    },
+    {
+      title: "Stations de Recharge",
+      description: "Infrastructures de recharge pour entreprises et collectivités",
+      icon: <Battery className="h-10 w-10 text-white" />,
+      color: "from-eco-blue to-eco-blue/70",
+      link: "/mobilite/stations-recharge"
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero section with modern gradient background */}
+        {/* Hero section */}
         <section className="bg-gradient-to-r from-eco-green to-eco-blue py-20 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')] opacity-20 bg-cover bg-center"></div>
           <div className="container mx-auto px-4 relative z-10">
@@ -40,7 +73,7 @@ const Mobilite = () => {
           </div>
         </section>
 
-        {/* Solutions section with enhanced tabs */}
+        {/* Solutions section with grid layout */}
         <section id="solutions" className="py-20 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
@@ -52,196 +85,33 @@ const Mobilite = () => {
               </p>
             </div>
             
-            <Tabs defaultValue="motorcycles" className="w-full max-w-6xl mx-auto">
-              <div className="mb-12 bg-white p-2 rounded-full shadow-md">
-                <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full">
-                  <TabsTrigger value="motorcycles" className="flex flex-col md:flex-row items-center gap-2 py-3 data-[state=active]:bg-eco-green data-[state=active]:text-white rounded-full transition-all">
-                    <Bike className="h-5 w-5" />
-                    <span>Motos Électriques</span>
-                  </TabsTrigger>
-                  <TabsTrigger value="tricycles" className="flex flex-col md:flex-row items-center gap-2 py-3 data-[state=active]:bg-eco-green data-[state=active]:text-white rounded-full transition-all">
-                    <Recycle className="h-5 w-5" />
-                    <span>Tricycles Électriques</span>
-                  </TabsTrigger>
-                  <TabsTrigger value="homechargers" className="flex flex-col md:flex-row items-center gap-2 py-3 data-[state=active]:bg-eco-green data-[state=active]:text-white rounded-full transition-all">
-                    <Plug className="h-5 w-5" />
-                    <span>Chargeurs Domestiques</span>
-                  </TabsTrigger>
-                  <TabsTrigger value="stations" className="flex flex-col md:flex-row items-center gap-2 py-3 data-[state=active]:bg-eco-green data-[state=active]:text-white rounded-full transition-all">
-                    <Battery className="h-5 w-5" />
-                    <span>Stations de Recharge</span>
-                  </TabsTrigger>
-                </TabsList>
-              </div>
-              
-              <TabsContent value="motorcycles" className="animate-fade-in">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="rounded-xl overflow-hidden h-[400px] shadow-xl transform hover:scale-[1.02] transition-transform">
-                    <img 
-                      src="https://images.unsplash.com/photo-1632990641317-6972096e5e10?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                      alt="Moto électrique" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex items-center">
-                    <Card className="border-0 shadow-xl">
-                      <CardHeader className="pb-2">
-                        <div className="bg-eco-green/10 w-fit p-3 rounded-full mb-4">
-                          <Bike className="h-6 w-6 text-eco-green" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {mobilitySolutions.map((solution, index) => (
+                <Link 
+                  key={index} 
+                  to={solution.link}
+                  className="transform transition-transform hover:scale-[1.02]"
+                >
+                  <Card className="h-full overflow-hidden border-none shadow-xl">
+                    <CardContent className="p-0">
+                      <div className={`bg-gradient-to-br ${solution.color} p-8 flex justify-between items-center`}>
+                        <div>
+                          <h3 className="text-2xl font-bold text-white mb-2">{solution.title}</h3>
+                          <p className="text-white/90">{solution.description}</p>
                         </div>
-                        <CardTitle className="text-2xl md:text-3xl font-bold">Motos Électriques</CardTitle>
-                        <CardDescription className="text-lg">Performance et durabilité sur deux roues</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-gray-700 mb-6 text-lg">
-                          Nos motos électriques combinent performance, autonomie et respect de l'environnement. Conçues pour les trajets urbains comme pour les escapades plus longues.
-                        </p>
-                        <ul className="space-y-3">
-                          {[
-                            "Autonomie jusqu'à 150 km",
-                            "Recharge complète en 4 heures",
-                            "Moteur puissant et silencieux",
-                            "Zéro émission de CO2",
-                            "Coût d'entretien réduit"
-                          ].map((item, i) => (
-                            <li key={i} className="flex items-center gap-3">
-                              <span className="h-6 w-6 rounded-full bg-eco-green/20 flex items-center justify-center text-eco-green">✓</span>
-                              <span className="text-gray-700">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="tricycles" className="animate-fade-in">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="order-2 md:order-1 flex items-center">
-                    <Card className="border-0 shadow-xl">
-                      <CardHeader className="pb-2">
-                        <div className="bg-eco-blue/10 w-fit p-3 rounded-full mb-4">
-                          <Recycle className="h-6 w-6 text-eco-blue" />
+                        <div className="bg-white/10 p-5 rounded-full">
+                          {solution.icon}
                         </div>
-                        <CardTitle className="text-2xl md:text-3xl font-bold">Tricycles Électriques</CardTitle>
-                        <CardDescription className="text-lg">Stabilité, confort et praticité</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-gray-700 mb-6 text-lg">
-                          Nos tricycles électriques sont parfaits pour les déplacements urbains et le transport de petites charges. Leur stabilité en fait une solution idéale pour tous.
-                        </p>
-                        <ul className="space-y-3">
-                          {[
-                            "Grande stabilité et facilité de conduite",
-                            "Capacité de charge jusqu'à 120 kg",
-                            "Autonomie de 80 km",
-                            "Idéal pour la ville et les courtes distances",
-                            "Options personnalisables selon vos besoins"
-                          ].map((item, i) => (
-                            <li key={i} className="flex items-center gap-3">
-                              <span className="h-6 w-6 rounded-full bg-eco-blue/20 flex items-center justify-center text-eco-blue">✓</span>
-                              <span className="text-gray-700">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-                  <div className="order-1 md:order-2 rounded-xl overflow-hidden h-[400px] shadow-xl transform hover:scale-[1.02] transition-transform">
-                    <img 
-                      src="https://images.unsplash.com/photo-1573566779956-22867e5e3d8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                      alt="Tricycle électrique" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="homechargers" className="animate-fade-in">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="rounded-xl overflow-hidden h-[400px] shadow-xl transform hover:scale-[1.02] transition-transform">
-                    <img 
-                      src="https://images.unsplash.com/photo-1558965513-b010c9c0621c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                      alt="Chargeur domestique" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex items-center">
-                    <Card className="border-0 shadow-xl">
-                      <CardHeader className="pb-2">
-                        <div className="bg-eco-green/10 w-fit p-3 rounded-full mb-4">
-                          <Plug className="h-6 w-6 text-eco-green" />
-                        </div>
-                        <CardTitle className="text-2xl md:text-3xl font-bold">Chargeurs Domestiques</CardTitle>
-                        <CardDescription className="text-lg">Solutions de recharge pour votre domicile</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-gray-700 mb-6 text-lg">
-                          Nos chargeurs domestiques vous permettent de recharger facilement votre véhicule électrique à la maison. Installation simple et sécurisée.
-                        </p>
-                        <ul className="space-y-3">
-                          {[
-                            "Installation par des techniciens certifiés",
-                            "Compatible avec tous les véhicules électriques",
-                            "Recharge jusqu'à 7 fois plus rapide qu'une prise standard",
-                            "Programmation intelligente pour optimiser vos coûts",
-                            "Garantie de 5 ans incluse"
-                          ].map((item, i) => (
-                            <li key={i} className="flex items-center gap-3">
-                              <span className="h-6 w-6 rounded-full bg-eco-green/20 flex items-center justify-center text-eco-green">✓</span>
-                              <span className="text-gray-700">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="stations" className="animate-fade-in">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="order-2 md:order-1 flex items-center">
-                    <Card className="border-0 shadow-xl">
-                      <CardHeader className="pb-2">
-                        <div className="bg-eco-blue/10 w-fit p-3 rounded-full mb-4">
-                          <Battery className="h-6 w-6 text-eco-blue" />
-                        </div>
-                        <CardTitle className="text-2xl md:text-3xl font-bold">Stations de Recharge</CardTitle>
-                        <CardDescription className="text-lg">Infrastructure pour entreprises et collectivités</CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-gray-700 mb-6 text-lg">
-                          Nos stations de recharge sont conçues pour les espaces publics, les entreprises et les commerces. Elles permettent de recharger rapidement plusieurs véhicules.
-                        </p>
-                        <ul className="space-y-3">
-                          {[
-                            "Solutions de 22 kW à 150 kW de puissance",
-                            "Recharge rapide (80% en 30 minutes)",
-                            "Système de paiement intégré",
-                            "Surveillance et maintenance à distance",
-                            "Installation clé en main et service après-vente"
-                          ].map((item, i) => (
-                            <li key={i} className="flex items-center gap-3">
-                              <span className="h-6 w-6 rounded-full bg-eco-blue/20 flex items-center justify-center text-eco-blue">✓</span>
-                              <span className="text-gray-700">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-                  <div className="order-1 md:order-2 rounded-xl overflow-hidden h-[400px] shadow-xl transform hover:scale-[1.02] transition-transform">
-                    <img 
-                      src="https://images.unsplash.com/photo-1593941707882-a5bfb1801833?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                      alt="Station de recharge" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-            </Tabs>
+                      </div>
+                      <div className="p-6 bg-white flex justify-between items-center">
+                        <span className="font-medium">Découvrir</span>
+                        <ArrowRight className="h-5 w-5 text-eco-green" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

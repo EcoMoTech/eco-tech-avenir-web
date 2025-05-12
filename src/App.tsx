@@ -26,6 +26,12 @@ import StockageEnergie from "./pages/energie/StockageEnergie";
 import EclairageSolaire from "./pages/energie/EclairageSolaire";
 import PompesSolaires from "./pages/energie/PompesSolaires";
 
+// Mobility pages
+import MotosElectriques from "./pages/mobilite/MotosElectriques";
+import TricyclesElectriques from "./pages/mobilite/TricyclesElectriques";
+import ChargeursDomestiques from "./pages/mobilite/ChargeursDomestiques";
+import StationsRecharge from "./pages/mobilite/StationsRecharge";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -55,6 +61,12 @@ const App = () => (
           <Route path="/energie/stockage-energie" element={<StockageEnergie />} />
           <Route path="/energie/eclairage-solaire" element={<EclairageSolaire />} />
           <Route path="/energie/pompes-solaires" element={<PompesSolaires />} />
+          
+          {/* Mobility Routes */}
+          <Route path="/mobilite/motos-electriques" element={<MotosElectriques />} />
+          <Route path="/mobilite/tricycles-electriques" element={<TricyclesElectriques />} />
+          <Route path="/mobilite/chargeurs-domestiques" element={<ChargeursDomestiques />} />
+          <Route path="/mobilite/stations-recharge" element={<StationsRecharge />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
