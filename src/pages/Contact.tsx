@@ -12,7 +12,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Globe, ExternalLink } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,6 +21,37 @@ const Contact = () => {
     // Logique de traitement du formulaire
     alert("Votre message a été envoyé. Nous vous répondrons dans les plus brefs délais.");
   };
+
+  const globalOffices = [
+    {
+      country: "Chine",
+      address: "888 Nanjing Road, Shanghai",
+      email: "china@ecomosol.com",
+      phone: "+86 21 1234 5678",
+      link: "https://ecomotech-china.com"
+    },
+    {
+      country: "Tanzanie",
+      address: "123 Uhuru Street, Dar es Salaam",
+      email: "tanzania@ecomosol.com",
+      phone: "+255 22 123 4567",
+      link: "#"
+    },
+    {
+      country: "Gambie",
+      address: "45 Independence Drive, Banjul",
+      email: "gambia@ecomosol.com",
+      phone: "+220 123 4567",
+      link: "#"
+    },
+    {
+      country: "République Démocratique du Congo",
+      address: "78 Boulevard du 30 Juin, Kinshasa",
+      email: "drc@ecomosol.com",
+      phone: "+243 99 123 4567",
+      link: "#"
+    }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -163,6 +195,47 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Global Presence Section */}
+        <div className="bg-gray-50 py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Notre Présence Mondiale</h2>
+              <div className="flex justify-center items-center">
+                <Globe className="h-6 w-6 text-eco-green mr-2" />
+                <p className="text-lg text-gray-600">Découvrez nos bureaux à travers le monde</p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {globalOffices.map((office, index) => (
+                <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="bg-eco-green/10 p-3 rounded-full">
+                        <MapPin className="h-6 w-6 text-eco-green" />
+                      </div>
+                      <h3 className="text-xl font-bold ml-3">Ecomotech {office.country}</h3>
+                    </div>
+                    <div className="space-y-3 mb-4">
+                      <p className="text-gray-600">{office.address}</p>
+                      <p className="text-gray-600">{office.email}</p>
+                      <p className="text-gray-600">{office.phone}</p>
+                    </div>
+                    <a 
+                      href={office.link} 
+                      className="inline-flex items-center text-eco-green hover:text-eco-blue transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Visiter le site <ExternalLink className="ml-1 h-4 w-4" />
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
