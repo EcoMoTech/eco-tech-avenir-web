@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -12,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Mail, Phone, MapPin, Clock, Globe, ExternalLink, Flag } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Globe, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Contact = () => {
@@ -28,28 +27,32 @@ const Contact = () => {
       address: "888 Nanjing Road, Shanghai",
       email: "china@ecomosol.com",
       phone: "+86 21 1234 5678",
-      link: "https://ecomotech-china.com"
+      link: "https://ecomotech-china.com",
+      flagImage: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
     },
     {
       country: "Tanzanie",
       address: "123 Uhuru Street, Dar es Salaam",
       email: "tanzania@ecomosol.com",
       phone: "+255 22 123 4567",
-      link: "#"
+      link: "#",
+      flagImage: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
     },
     {
       country: "Gambie",
       address: "45 Independence Drive, Banjul",
       email: "gambia@ecomosol.com",
       phone: "+220 123 4567",
-      link: "#"
+      link: "#",
+      flagImage: "https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
     },
     {
       country: "République Démocratique du Congo",
       address: "78 Boulevard du 30 Juin, Kinshasa",
       email: "drc@ecomosol.com",
       phone: "+243 99 123 4567",
-      link: "#"
+      link: "#",
+      flagImage: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
     }
   ];
 
@@ -215,10 +218,14 @@ const Contact = () => {
                 <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
-                      <div className="bg-eco-green/10 p-3 rounded-full">
-                        <Flag className="h-6 w-6 text-eco-green" />
+                      <div className="h-12 w-12 overflow-hidden rounded-full mr-3 border border-gray-200 flex-shrink-0">
+                        <img 
+                          src={office.flagImage} 
+                          alt={`Drapeau ${office.country}`} 
+                          className="h-full w-full object-cover"
+                        />
                       </div>
-                      <div className="ml-3">
+                      <div className="ml-2">
                         <div className="flex items-center">
                           <h3 className="text-xl font-bold">Ecomotech {office.country}</h3>
                         </div>
