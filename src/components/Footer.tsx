@@ -40,19 +40,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Solutions</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/energie/residentiel" className="text-gray-300 hover:text-eco-green transition-colors">Résidentiel</Link>
+                <Link to="/solutions/residentiel" className="text-gray-300 hover:text-eco-green transition-colors">Résidentiel</Link>
               </li>
               <li>
-                <Link to="/energie/commercial" className="text-gray-300 hover:text-eco-green transition-colors">Commercial</Link>
+                <Link to="/solutions/commercial" className="text-gray-300 hover:text-eco-green transition-colors">Commercial</Link>
               </li>
               <li>
-                <Link to="/energie/industriel" className="text-gray-300 hover:text-eco-green transition-colors">Industriel</Link>
+                <Link to="/solutions/industriel" className="text-gray-300 hover:text-eco-green transition-colors">Industriel</Link>
               </li>
               <li>
-                <Link to="/mobilite/vehicules" className="text-gray-300 hover:text-eco-green transition-colors">Véhicules électriques</Link>
+                <Link to="/solutions/vehicules-electriques" className="text-gray-300 hover:text-eco-green transition-colors">Véhicules électriques</Link>
               </li>
               <li>
-                <Link to="/mobilite/recharge" className="text-gray-300 hover:text-eco-green transition-colors">Infrastructure de recharge</Link>
+                <Link to="/solutions/infrastructure-recharge" className="text-gray-300 hover:text-eco-green transition-colors">Infrastructure de recharge</Link>
               </li>
             </ul>
           </div>

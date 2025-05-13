@@ -32,6 +32,13 @@ import TricyclesElectriques from "./pages/mobilite/TricyclesElectriques";
 import ChargeursDomestiques from "./pages/mobilite/ChargeursDomestiques";
 import StationsRecharge from "./pages/mobilite/StationsRecharge";
 
+// Footer solution pages
+import Residentiel from "./pages/solutions/Residentiel";
+import Commercial from "./pages/solutions/Commercial";
+import Industriel from "./pages/solutions/Industriel";
+import VehiculesElectriques from "./pages/solutions/VehiculesElectriques";
+import InfrastructureRecharge from "./pages/solutions/InfrastructureRecharge";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -67,6 +74,13 @@ const App = () => (
           <Route path="/mobilite/tricycles-electriques" element={<TricyclesElectriques />} />
           <Route path="/mobilite/chargeurs-domestiques" element={<ChargeursDomestiques />} />
           <Route path="/mobilite/stations-recharge" element={<StationsRecharge />} />
+          
+          {/* Footer Solution Routes */}
+          <Route path="/solutions/residentiel" element={<Residentiel />} />
+          <Route path="/solutions/commercial" element={<Commercial />} />
+          <Route path="/solutions/industriel" element={<Industriel />} />
+          <Route path="/solutions/vehicules-electriques" element={<VehiculesElectriques />} />
+          <Route path="/solutions/infrastructure-recharge" element={<InfrastructureRecharge />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
