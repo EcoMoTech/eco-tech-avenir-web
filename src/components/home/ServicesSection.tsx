@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { ArrowRight, Sun, Battery, Wrench, Leaf, BatteryCharging, Building, Home, Factory, Car, ChargingPole } from 'lucide-react';
+import { ArrowRight, Sun, Battery, Wrench, Leaf, BatteryCharging, Building, Home, Factory, Car } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 
 // Solutions data
@@ -45,7 +44,7 @@ const solutions = [
     description: "Bornes et stations de recharge pour tous types de véhicules électriques.",
     image: "https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     link: "/solutions/infrastructure-recharge",
-    icon: <ChargingPole className="w-6 h-6" />
+    icon: <BatteryCharging className="w-6 h-6" />
   }
 ];
 
