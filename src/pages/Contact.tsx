@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Mail, Phone, MapPin, Clock, Globe, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Globe, ExternalLink, Flag } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Contact = () => {
@@ -216,14 +216,30 @@ const Contact = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       <div className="bg-eco-green/10 p-3 rounded-full">
-                        <MapPin className="h-6 w-6 text-eco-green" />
+                        <Flag className="h-6 w-6 text-eco-green" />
                       </div>
-                      <h3 className="text-xl font-bold ml-3">Ecomotech {office.country}</h3>
+                      <div className="ml-3">
+                        <div className="flex items-center">
+                          <h3 className="text-xl font-bold">Ecomotech {office.country}</h3>
+                        </div>
+                        <div className="mt-1 flex items-center">
+                          <span className="text-sm text-gray-500">Bureau {index + 1}</span>
+                        </div>
+                      </div>
                     </div>
                     <div className="space-y-3 mb-4">
-                      <p className="text-gray-600">{office.address}</p>
-                      <p className="text-gray-600">{office.email}</p>
-                      <p className="text-gray-600">{office.phone}</p>
+                      <div className="flex items-start">
+                        <MapPin className="h-4 w-4 text-gray-500 mr-2 mt-1" />
+                        <p className="text-gray-600">{office.address}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <Mail className="h-4 w-4 text-gray-500 mr-2" />
+                        <p className="text-gray-600">{office.email}</p>
+                      </div>
+                      <div className="flex items-center">
+                        <Phone className="h-4 w-4 text-gray-500 mr-2" />
+                        <p className="text-gray-600">{office.phone}</p>
+                      </div>
                     </div>
                     <a 
                       href={office.link} 
