@@ -5,12 +5,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BriefcaseBusiness, Leaf, LightBulb, Electric, SolarPanel, ChartBar } from 'lucide-react';
+import { BriefcaseBusiness, Leaf, Lightbulb, Zap, PanelTop, BarChart } from 'lucide-react';
 
 const jobOffers = [
   {
     title: "Ingénieur en Systèmes Photovoltaïques",
-    icon: <SolarPanel className="h-8 w-8 text-eco-green mb-2" />,
+    icon: <PanelTop className="h-8 w-8 text-eco-green mb-2" />,
     description: "Conception, installation et maintenance de systèmes photovoltaïques pour nos clients résidentiels et commerciaux.",
     requirements: [
       "Diplôme en génie électrique ou énergies renouvelables",
@@ -22,7 +22,7 @@ const jobOffers = [
   },
   {
     title: "Ingénieur en Systèmes de Stockage d'Énergie (BESS)",
-    icon: <LightBulb className="h-8 w-8 text-eco-blue mb-2" />,
+    icon: <Lightbulb className="h-8 w-8 text-eco-blue mb-2" />,
     description: "Développement et implémentation de solutions de stockage d'énergie par batterie pour applications on-grid et off-grid.",
     requirements: [
       "Master en génie électrique ou équivalent",
@@ -46,7 +46,7 @@ const jobOffers = [
   },
   {
     title: "Expert Marketing en Énergies Renouvelables",
-    icon: <ChartBar className="h-8 w-8 text-eco-blue mb-2" />,
+    icon: <BarChart className="h-8 w-8 text-eco-blue mb-2" />,
     description: "Élaboration et mise en œuvre de stratégies marketing pour promouvoir nos solutions d'énergie durable et de mobilité électrique.",
     requirements: [
       "Diplôme en marketing ou communication",
@@ -58,7 +58,7 @@ const jobOffers = [
   },
   {
     title: "Ingénieur en Mobilité Électrique",
-    icon: <Electric className="h-8 w-8 text-eco-green mb-2" />,
+    icon: <Zap className="h-8 w-8 text-eco-green mb-2" />,
     description: "Conception et implémentation de solutions de mobilité électrique adaptées au contexte africain, y compris les infrastructures de recharge.",
     requirements: [
       "Formation en génie électrique ou mécanique",
