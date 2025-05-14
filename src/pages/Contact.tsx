@@ -36,7 +36,7 @@ const Contact = () => {
       email: "tanzania@ecomosol.com",
       phone: "+255 22 123 4567",
       link: "#",
-      flagImage: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
+      flagImage: "/ecomotech-guinea/images/flags/tanzania.webp" 
     },
     {
       country: "Gambie",
@@ -44,16 +44,16 @@ const Contact = () => {
       email: "gambia@ecomosol.com",
       phone: "+220 123 4567",
       link: "#",
-      flagImage: "https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
+      flagImage: "/ecomotech-guinea/images/flags/the gambia.webp"
     },
     {
-      country: "République Démocratique du Congo",
+      country: "RD Congo",
       address: "78 Boulevard du 30 Juin, Kinshasa",
       email: "drc@ecomosol.com",
       phone: "+243 99 123 4567",
       link: "#",
-      flagImage: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
-    }
+      flagImage: "/ecomotech-guinea/images/flags/drc.webp" 
+    },
   ];
 
   return (
