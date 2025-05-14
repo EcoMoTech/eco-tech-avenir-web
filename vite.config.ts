@@ -20,6 +20,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Base URL for GitHub Pages - if you're deploying to a custom domain, change this
-  base: './',
+  // Base URL for GitHub Pages with the new repository name
+  base: '/ecomotech-guinea/',
 }));
