@@ -21,7 +21,7 @@ const Navbar = () => {
           </Link>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <Link to="/" className="text-gray-700 hover:text-eco-green font-medium transition-colors">
               Accueil
             </Link>
@@ -33,6 +33,12 @@ const Navbar = () => {
             </Link>
             <Link to="/services" className="text-gray-700 hover:text-eco-green font-medium transition-colors">
               Services
+            </Link>
+            <Link to="/news" className="text-gray-700 hover:text-eco-green font-medium transition-colors">
+              Actualités
+            </Link>
+            <Link to="/join-us" className="text-gray-700 hover:text-eco-green font-medium transition-colors">
+              Rejoindre
             </Link>
             <Link to="/a-propos" className="text-gray-700 hover:text-eco-green font-medium transition-colors">
               À Propos
@@ -74,6 +80,12 @@ const Navbar = () => {
               </Link>
               <Link to="/services" className="text-gray-700 hover:text-eco-green font-medium transition-colors" onClick={toggleMenu}>
                 Services
+              </Link>
+              <Link to="/news" className="text-gray-700 hover:text-eco-green font-medium transition-colors" onClick={toggleMenu}>
+                Actualités
+              </Link>
+              <Link to="/join-us" className="text-gray-700 hover:text-eco-green font-medium transition-colors" onClick={toggleMenu}>
+                Rejoindre
               </Link>
               <Link to="/a-propos" className="text-gray-700 hover:text-eco-green font-medium transition-colors" onClick={toggleMenu}>
                 À Propos

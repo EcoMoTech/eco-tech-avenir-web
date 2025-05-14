@@ -11,6 +11,8 @@ import Energie from "./pages/Energie";
 import Mobilite from "./pages/Mobilite";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
+import News from "./pages/News";
+import JoinUs from "./pages/JoinUs";
 
 // Service pages
 import InstallationPhotovoltaique from "./pages/services/InstallationPhotovoltaique";
@@ -54,6 +56,8 @@ const App = () => (
           <Route path="/energie" element={<Energie />} />
           <Route path="/mobilite" element={<Mobilite />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/join-us" element={<JoinUs />} />
           
           {/* Service Routes */}
           <Route path="/services/installation-photovoltaique" element={<InstallationPhotovoltaique />} />
