@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -40,6 +39,9 @@ import Commercial from "./pages/solutions/Commercial";
 import Industriel from "./pages/solutions/Industriel";
 import VehiculesElectriques from "./pages/solutions/VehiculesElectriques";
 import InfrastructureRecharge from "./pages/solutions/InfrastructureRecharge";
+
+// News article pages
+import Article from '@/pages/news/Article';
 
 const queryClient = new QueryClient();
 
@@ -85,6 +87,9 @@ const App = () => (
           <Route path="/solutions/industriel" element={<Industriel />} />
           <Route path="/solutions/vehicules-electriques" element={<VehiculesElectriques />} />
           <Route path="/solutions/infrastructure-recharge" element={<InfrastructureRecharge />} />
+          
+          {/* News Article Routes */}
+          <Route path="/news/:id" element={<Article />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

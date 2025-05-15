@@ -1,4 +1,3 @@
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -22,4 +21,18 @@ export default defineConfig(({ mode }) => ({
   },
   // Base URL for GitHub Pages with the correct repository name
   base: '/ecomotech-guinea/',
+  build: {
+    chunkSizeWarningLimit: 800,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: [
+            'react',
+            'react-dom',
+            'react-router-dom',
+          ],
+        },
+      },
+    },
+  },
 }));

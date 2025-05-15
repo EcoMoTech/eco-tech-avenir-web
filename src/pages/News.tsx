@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -77,13 +76,15 @@ const News = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <AspectRatio ratio={16/9} className="bg-gray-100">
-                <img 
-                  src={post.imageUrl} 
-                  alt={post.title} 
-                  className="object-cover w-full h-full"
-                />
-              </AspectRatio>
+              <Link to={`/news/${post.id}`} className="block">
+                <AspectRatio ratio={16/9} className="bg-gray-100">
+                  <img 
+                    src={post.imageUrl} 
+                    alt={post.title} 
+                    className="object-cover w-full h-full"
+                  />
+                </AspectRatio>
+              </Link>
               <CardHeader>
                 <div className="flex justify-between items-center text-sm text-gray-500 mb-2">
                   <span className="bg-eco-green/10 text-eco-green px-2 py-1 rounded">{post.category}</span>

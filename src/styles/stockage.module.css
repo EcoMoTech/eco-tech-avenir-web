@@ -1,0 +1,115 @@
+.news-article {
+  padding: 2rem;
+  line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.article-header {
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.article-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #003366;
+}
+
+.article-meta {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #005599;
+}
+
+.article-list {
+  margin-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.link-contact {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.newsArticle {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.batterieStockage {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.articleHeader {
+  margin-bottom: 2rem;
+}
+
+.articleTitle {
+  font-size: 2.5rem;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.articleMeta {
+  color: #718096;
+  font-size: 0.875rem;
+}
+
+.author {
+  color: var(--eco-green);
+  font-weight: 500;
+}
+
+.articleSection {
+  margin: 2rem 0;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.articleList {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.articleList li {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.articleList li::before {
+  content: "•";
+  color: var(--eco-green);
+  position: absolute;
+  left: -1.5rem;
+}
+
+.articleFooter {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.linkContact {
+  color: var(--eco-green);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.linkContact:hover {
+  color: var(--eco-blue);
+}
