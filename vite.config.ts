@@ -20,6 +20,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Base URL for GitHub Pages with the new repository name
+  // Base URL for GitHub Pages with the correct repository name
   base: '/ecomotech-guinea/',
 }));
