@@ -9,6 +9,7 @@ export const articleData = {
   imageUrl: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9",
   content: /*html*/`
     <article class="${styles.articleContent}">
+      <p class="${styles.articleMeta}">Publié le <time datetime="2025-05-15">15 mai 2025</time> par <span class="${styles.author}">Emotech</span></p>
       <section class="${styles.introduction}">
         <p class="${styles.lead}">
           L'Afrique de l'Ouest bénéficie d'un ensoleillement exceptionnel tout au long de l'année. Cette ressource naturelle abondante positionne la région comme un terrain idéal pour le développement de l'énergie solaire. Face aux défis énergétiques croissants — accès limité à l'électricité, dépendance aux énergies fossiles importées, réseaux électriques instables — l'énergie solaire s'impose comme une solution propre, durable et économiquement viable.

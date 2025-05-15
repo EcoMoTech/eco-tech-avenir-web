@@ -9,7 +9,6 @@ export const articleData = {
   content: `
     <article class="${styles.newsArticle} ${styles.batterieStockage}">
   <header class="${styles.articleHeader}">
-    <h1 class="${styles.articleTitle}">Stockage d'Énergie par Batterie : Solutions pour Zones Rurales et Urbaines</h1>
     <p class="${styles.articleMeta}">Publié le <time datetime="2025-05-15">15 mai 2025</time> par <span class="${styles.author}">Emotech</span></p>
   </header>
 

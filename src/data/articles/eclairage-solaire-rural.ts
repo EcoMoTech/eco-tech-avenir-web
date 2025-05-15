@@ -10,7 +10,6 @@ export const articleData = {
   content: /*html*/ `
     <article class="${styles.newsArticle} ${styles.eclairageSolaire}">
       <header class="${styles.articleHeader}">
-        <h1 class="${styles.articleTitle}">L'Éclairage Solaire : Sécurité et Développement pour les Zones Rurales</h1>
         <p class="${styles.articleMeta}">Publié le <time datetime="2024-05-15">15 mai 2025</time> par <span class="${styles.author}">Ecomotech</span></p>
       </header>
 
