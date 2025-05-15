@@ -3,6 +3,8 @@ import React from 'react';
 import ServiceLayout from '@/components/ServiceLayout';
 import { Sun, Check, Shield, BarChart3, Wrench } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const MaintenanceCentrales = () => {
   return (
@@ -35,6 +37,13 @@ const MaintenanceCentrales = () => {
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}
+              </div>
+              <div className="mt-8">
+                <Button asChild className="bg-eco-green hover:bg-eco-green/90">
+                  <Link to="/services">
+                    Voir tous nos services
+                  </Link>
+                </Button>
               </div>
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl">
