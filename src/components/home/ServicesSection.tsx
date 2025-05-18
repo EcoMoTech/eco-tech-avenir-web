@@ -11,7 +11,7 @@ const solutions = [
     id: 1,
     title: "Solutions résidentielles",
     description: "Systèmes photovoltaïques et solutions énergétiques pour les particuliers.",
-    image: "https://images.unsplash.com/photo-1530968464165-7a1861cbaf9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/ecomotech-guinea/images/Accueil/HomeSystem.webp",
     link: "/solutions/residentiel",
     icon: <Home className="w-6 h-6" />
   },
@@ -19,7 +19,7 @@ const solutions = [
     id: 2,
     title: "Solutions commerciales",
     description: "Installations solaires et gestion énergétique pour les entreprises et commerces.",
-    image: "https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/ecomotech-guinea/images/Accueil/Solar PV commercial.jpg",
     link: "/solutions/commercial",
     icon: <Building className="w-6 h-6" />
   },
@@ -27,7 +27,7 @@ const solutions = [
     id: 3,
     title: "Solutions industrielles",
     description: "Centrales photovoltaïques et systèmes de stockage pour l'industrie.",
-    image: "https://images.unsplash.com/photo-1638845271677-5234be842685?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image:  "/ecomotech-guinea/images/Accueil/Industrial.jpg",
     link: "/solutions/industriel",
     icon: <Factory className="w-6 h-6" />
   },
@@ -35,7 +35,7 @@ const solutions = [
     id: 4,
     title: "Véhicules électriques",
     description: "Gamme complète de motos et tricycles électriques pour une mobilité durable.",
-    image: "https://images.unsplash.com/photo-1610963196817-7d1415647029?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/ecomotech-guinea/images/Accueil/Ebike.webp",
     link: "/solutions/vehicules-electriques",
     icon: <Car className="w-6 h-6" />
   },
@@ -43,7 +43,7 @@ const solutions = [
     id: 5,
     title: "Infrastructure de recharge",
     description: "Bornes et stations de recharge pour tous types de véhicules électriques.",
-    image: "https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image:  "/ecomotech-guinea/images/Accueil/EV charging station.avif",
     link: "/solutions/infrastructure-recharge",
     icon: <BatteryCharging className="w-6 h-6" />
   }
@@ -55,7 +55,7 @@ const services = [
     id: 1,
     title: "Installation Photovoltaïque",
     description: "Solutions photovoltaïques sur mesure pour votre maison ou entreprise.",
-    image: "https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image:  "/ecomotech-guinea/images/Accueil/PV installation.webp",
     link: "/services/installation-photovoltaique",
     icon: <Sun className="w-6 h-6" />
   },
@@ -63,7 +63,7 @@ const services = [
     id: 2,
     title: "Maintenance de Centrales Solaires",
     description: "Services de maintenance et d'entretien pour installations photovoltaïques à grande échelle.",
-    image: "https://images.unsplash.com/photo-1566093097221-ac2335b09e70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/ecomotech-guinea/images/Accueil/troubleshooting.jpg",
     link: "/services/maintenance-centrales",
     icon: <Sun className="w-6 h-6" />
   },
@@ -71,7 +71,7 @@ const services = [
     id: 3,
     title: "Installation de Bornes de Recharge",
     description: "Solutions de recharge pour véhicules électriques adaptées à votre domicile ou entreprise.",
-    image: "https://images.unsplash.com/photo-1593941707882-a56bba8b4b76?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/ecomotech-guinea/images/Accueil/Chanrgers 7kW.jpg",
     link: "/services/bornes-recharge",
     icon: <BatteryCharging className="w-6 h-6" />
   },
@@ -79,7 +79,7 @@ const services = [
     id: 4,
     title: "Réparation de Véhicules Électriques",
     description: "Service de réparation et maintenance pour tous types de véhicules électriques.",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/ecomotech-guinea/images/Accueil/EV repaire.png",
     link: "/services/reparation-vehicules",
     icon: <Wrench className="w-6 h-6" />
   },
@@ -87,7 +87,7 @@ const services = [
     id: 5,
     title: "Conseil en Photovoltaïque",
     description: "Services d'expertise et de conseil pour optimiser votre projet photovoltaïque.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/ecomotech-guinea/images/Accueil/PV.webp",
     link: "/services/conseil-photovoltaique",
     icon: <Sun className="w-6 h-6" />
   },
@@ -95,7 +95,7 @@ const services = [
     id: 6,
     title: "Audit d'Efficacité Énergétique",
     description: "Évaluations détaillées et recommandations pour améliorer l'efficacité énergétique.",
-    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/ecomotech-guinea/images/Accueil/Energy efficiency.jpeg",
     link: "/services/audit-efficacite",
     icon: <Leaf className="w-6 h-6" />
   }

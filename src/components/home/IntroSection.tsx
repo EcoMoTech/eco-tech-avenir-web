@@ -39,7 +39,7 @@ const IntroSection = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
                 <img 
-                  src="https://images.unsplash.com/photo-1509390144018-eeaf65052242?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
+                  src="/ecomotech-guinea/images/Accueil/PV.webp" 
                   alt="Installations solaires" 
                   className="w-full h-[500px] object-cover object-center"
                 />

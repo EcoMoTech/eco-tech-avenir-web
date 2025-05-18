@@ -15,32 +15,32 @@ const testimonials = [
     id: 1,
     quote: "Grâce à EcoMoTech, j'ai réduit ma facture d'électricité de 70%. L'installation a été rapide et professionnelle.",
     author: "Marie L.",
-    position: "Propriétaire, Résidence à Lyon",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    position: "Propriétaire, Résidence à Mamou",
+    image: "/ecomotech-guinea/images/Accueil/customer.webp",
     rating: 5
   },
   {
     id: 2,
     quote: "Notre entreprise a fait le choix de panneaux solaires EcoMoTech. Un an plus tard, l'investissement est déjà rentable.",
-    author: "Philippe D.",
-    position: "Directeur, PME à Nantes",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    author: "Moussa D.",
+    position: "Directeur, PME à Kindia",
+    image:  "/ecomotech-guinea/images/Accueil/cust.jpg",
     rating: 5
   },
   {
     id: 3,
     quote: "Le service client est exceptionnel. De la conception à l'installation, EcoMoTech nous a accompagnés pas à pas.",
     author: "Camille T.",
-    position: "Gérante, Boutique à Paris",
-    image: "https://randomuser.me/api/portraits/women/68.jpg",
+    position: "Gérante, Boutique à Conakry",
+    image:  "/ecomotech-guinea/images/Accueil/customers.webp",
     rating: 5
   },
   {
     id: 4,
     quote: "Nous avons équipé notre flotte avec des véhicules électriques EcoMoTech. Un vrai plus pour notre image et notre budget.",
     author: "Thomas B.",
-    position: "Responsable logistique, Marseille",
-    image: "https://randomuser.me/api/portraits/men/15.jpg",
+    position: "Responsable logistique, Kamsar",
+    image: "/ecomotech-guinea/images/Accueil/custom.jpg",
     rating: 4
   }
 ];

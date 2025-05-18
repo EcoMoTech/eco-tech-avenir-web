@@ -27,8 +27,8 @@ const Contact = () => {
       address: "888 Nanjing Road, Shanghai",
       email: "china@ecomosol.com",
       phone: "+86 21 1234 5678",
-      link: "https://ecomotech-china.com",
-      flagImage: "https://images.unsplash.com/photo-1466442929976-97f336a657be?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80"
+      link: "https://bamamou.github.io/EcoMoTechWeb",
+      flagImage: "/ecomotech-guinea/images/flags/china.png"
     },
     {
       country: "Tanzanie",
