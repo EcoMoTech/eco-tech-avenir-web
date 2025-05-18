@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -13,20 +14,95 @@ import {
 } from '@/components/ui/select';
 import { Mail, Phone, MapPin, Clock, Globe, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Check } from 'lucide-react';
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({
+    type: null,
+    message: ''
+  });
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      subject: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Logique de traitement du formulaire
-    alert("Votre message a été envoyé. Nous vous répondrons dans les plus brefs délais.");
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const result = await emailjs.send(
+        'ecomotech',
+        'ECOMOTECH',
+        {
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Ecomotech Team',
+        },
+        'L2DkGjfmnyn-pOmed'
+      );
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Votre message a été envoyé avec succès.'
+      });
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+      });
+      setShowSuccessDialog(true); // Show the success dialog
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const globalOffices = [
     {
       country: "Chine",
-      address: "888 Nanjing Road, Shanghai",
+      address: "28 Yizhuang Economic Development Zone, Daxing District, Beijing, China",
       email: "china@ecomosol.com",
-      phone: "+86 21 1234 5678",
+      phone: "+86 188 1079 9128",
       link: "https://bamamou.github.io/EcoMoTechWeb",
       flagImage: "/ecomotech-guinea/images/flags/china.png"
     },
@@ -76,31 +152,64 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="bg-white p-8 rounded-lg shadow-md">
               <h2 className="text-2xl font-bold mb-6">Écrivez-nous</h2>
+              
+              {submitStatus.type && (
+                <div className={`mb-6 p-4 rounded-lg ${
+                  submitStatus.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                }`}>
+                  {submitStatus.message}
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="firstName" className="text-sm font-medium">Prénom</label>
-                    <Input id="firstName" placeholder="Votre prénom" required />
+                    <Input
+                      id="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      placeholder="Votre prénom"
+                      required
+                    />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="lastName" className="text-sm font-medium">Nom</label>
-                    <Input id="lastName" placeholder="Votre nom" required />
+                    <Input
+                      id="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      placeholder="Votre nom"
+                      required
+                    />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">Email</label>
-                  <Input id="email" type="email" placeholder="votre@email.com" required />
+                  <Input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="votre@email.com"
+                    required
+                  />
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-medium">Téléphone</label>
-                  <Input id="phone" placeholder="Votre numéro de téléphone" />
+                  <Input
+                    id="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="Votre numéro de téléphone"
+                  />
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium">Sujet</label>
-                  <Select>
+                  <Select onValueChange={handleSelectChange} value={formData.subject}>
                     <SelectTrigger>
                       <SelectValue placeholder="Choisissez un sujet" />
                     </SelectTrigger>
@@ -117,11 +226,22 @@ const Contact = () => {
 
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">Message</label>
-                  <Textarea id="message" placeholder="Comment pouvons-nous vous aider ?" rows={5} required />
+                  <Textarea
+                    id="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Comment pouvons-nous vous aider ?"
+                    rows={5}
+                    required
+                  />
                 </div>
 
-                <Button type="submit" className="bg-eco-green hover:bg-eco-green/90 w-full">
-                  Envoyer le message
+                <Button
+                  type="submit"
+                  className="bg-eco-green hover:bg-eco-green/90 w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
                 </Button>
               </form>
             </div>
@@ -140,7 +260,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-eco-green mr-4 mt-0.5" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-gray-600">contact@ecomosol.fr</p>
+                    <p className="text-gray-600">ecomotech@outlook.com</p>
                   </div>
                 </div>
 
@@ -148,7 +268,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-eco-green mr-4 mt-0.5" />
                   <div>
                     <h3 className="font-semibold">Téléphone</h3>
-                    <p className="text-gray-600">+33 (0)1 23 45 67 89</p>
+                    <p className="text-gray-600">+224 626 28 51 24</p>
                   </div>
                 </div>
 
@@ -157,8 +277,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold">Adresse</h3>
                     <p className="text-gray-600">
-                      123 Avenue de l'Innovation<br />
-                      75001 Paris, France
+                      National N5 Balamouya, <br />
+                      Prefecturede de Coyah, Guinee
                     </p>
                   </div>
                 </div>
@@ -178,10 +298,16 @@ const Contact = () => {
               <div className="mt-8 pt-8 border-t">
                 <h3 className="text-xl font-semibold mb-4">Suivez-nous</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="bg-gray-200 p-3 rounded-full hover:bg-eco-green hover:text-white transition-colors">
+                  <a href="https://www.facebook.com/people/Ecomotech/61574949172407/" className="bg-gray-200 p-3 rounded-full hover:bg-eco-green hover:text-white transition-colors">
                     <span className="sr-only">Facebook</span>
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd"></path>
+                    </svg>
+                  </a>
+                  <a href="https://x.com/ecomotech" className="bg-gray-200 p-3 rounded-full hover:bg-eco-green hover:text-white transition-colors">
+                    <span className="sr-only">X (Twitter)</span>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                     </svg>
                   </a>
                   <a href="#" className="bg-gray-200 p-3 rounded-full hover:bg-eco-green hover:text-white transition-colors">
@@ -263,6 +389,30 @@ const Contact = () => {
           </div>
         </div>
       </main>
+
+      {/* Success Dialog */}
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 mb-4">
+              <Check className="h-6 w-6 text-green-600" />
+            </div>
+            <DialogTitle className="text-center text-xl">Merci de nous avoir contacté !</DialogTitle>
+            <DialogDescription className="text-center">
+              <p className="mt-2">
+                Nous avons bien reçu votre message et nous vous remercions de l'intérêt que vous portez à nos services.
+              </p>
+              <p className="mt-2">
+                Notre équipe s'engage à vous répondre dans les plus brefs délais, généralement sous 24-48 heures ouvrées.
+              </p>
+              <p className="mt-2 font-semibold">
+                L'équipe EcoMoTech
+              </p>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+
       <Footer />
     </div>
   );

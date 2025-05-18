@@ -1,5 +1,4 @@
 import React from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Sun, Battery, CloudSun, LampFloor } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -47,7 +46,7 @@ const Energie = () => {
           <div className="absolute -top-20 -right-20 w-72 h-72 bg-eco-blue/20 rounded-full blur-3xl"></div>
         </section>
 
-        {/* Section des solutions énergétiques */}
+        {/* Solutions énergétiques section */}
         <section className="py-20 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
@@ -60,214 +59,182 @@ const Energie = () => {
               </p>
             </div>
 
-            {/* First row of tabs */}
-            <div className="space-y-16">
-              <Tabs defaultValue="home" className="w-full max-w-6xl mx-auto">
-                <TabsList className="grid grid-cols-2 gap-2 mb-12 bg-gray-100/50 p-1.5 rounded-xl">
-                  <TabsTrigger value="home" className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300">
-                    <Sun className="h-5 w-5 text-eco-green" />
-                    <span>Systèmes Résidentiels</span>
-                  </TabsTrigger>
-                  <TabsTrigger value="battery" className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300">
-                    <Battery className="h-5 w-5 text-eco-green" />
-                    <span>Stockage d'Énergie</span>
-                  </TabsTrigger>
-                </TabsList>
-                
-                <TabsContent value="home">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div className="order-2 md:order-1">
-                      <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 overflow-hidden">
-                        <CardHeader className="pb-2">
-                          <Badge className="w-fit mb-2 bg-eco-green/10 text-eco-green hover:bg-eco-green/20">Résidentiel</Badge>
-                          <CardTitle className="text-2xl text-gray-800">Systèmes Solaires Résidentiels</CardTitle>
-                          <CardDescription className="text-gray-600">Solutions complètes pour votre maison</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-700 mb-4">
-                            Nos systèmes solaires résidentiels sont conçus pour maximiser votre indépendance énergétique tout en réduisant vos factures d'électricité. Adaptés à tous types de toitures, ils s'intègrent parfaitement à votre habitat.
-                          </p>
-                          <ul className="space-y-2 text-gray-700">
-                            {[
-                              "Panneaux photovoltaïques haute performance", 
-                              "Systèmes connectés au réseau ou autonomes",
-                              "Monitoring en temps réel de votre production",
-                              "Installation clé en main par nos experts",
-                              "Compatible avec stockage par batteries"
-                            ].map((item, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="mr-2 mt-1 h-2 w-2 rounded-full bg-eco-green flex-shrink-0"></span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                        <CardFooter className="pt-2">
-                          <Button asChild className="bg-eco-green hover:bg-eco-green/90">
-                            <Link to="/energie/systemes-residentiels">En savoir plus</Link>
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    </div>
-                    <div className="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl h-[350px] transform transition-transform hover:scale-[1.02] duration-500">
-                      <img 
-                        src={SOLAR_PANELS}
-                        alt="Installation solaire résidentielle" 
-                        className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
-                      />
-                    </div>
-                  </div>
-                </TabsContent>
-                
-                <TabsContent value="battery">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div className="rounded-2xl overflow-hidden shadow-xl h-[350px] transform transition-transform hover:scale-[1.02] duration-500">
-                      <img 
-                        src={BATTERY_STORAGE}
-                        alt="Système de stockage par batteries" 
-                        className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
-                      />
-                    </div>
-                    <div>
-                      <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 overflow-hidden">
-                        <CardHeader className="pb-2">
-                          <Badge className="w-fit mb-2 bg-eco-blue/10 text-eco-blue hover:bg-eco-blue/20">Stockage</Badge>
-                          <CardTitle className="text-2xl text-gray-800">Solutions de Stockage d'Énergie</CardTitle>
-                          <CardDescription className="text-gray-600">Maximisez votre autonomie énergétique</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-700 mb-4">
-                            Nos systèmes de stockage d'énergie par batteries vous permettent de stocker l'énergie solaire produite pendant la journée pour l'utiliser quand vous en avez besoin, y compris la nuit ou lors de coupures de courant.
-                          </p>
-                          <ul className="space-y-2 text-gray-700">
-                            {[
-                              "Batteries lithium-ion dernière génération", 
-                              "Systèmes évolutifs selon vos besoins",
-                              "Onduleurs hybrides intelligents",
-                              "Gestion automatisée de l'énergie",
-                              "Garantie jusqu'à 10 ans"
-                            ].map((item, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="mr-2 mt-1 h-2 w-2 rounded-full bg-eco-blue flex-shrink-0"></span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                        <CardFooter className="pt-2">
-                          <Button asChild className="bg-eco-blue hover:bg-eco-blue/90">
-                            <Link to="/energie/stockage-energie">En savoir plus</Link>
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    </div>
-                  </div>
-                </TabsContent>
-              </Tabs>
+            <div className="space-y-24 max-w-6xl mx-auto">
+              {/* Systèmes Résidentiels */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="order-2 md:order-1">
+                  <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+                    <CardHeader className="pb-2">
+                      <Badge className="w-fit mb-2 bg-eco-green/10 text-eco-green hover:bg-eco-green/20">Résidentiel</Badge>
+                      <CardTitle className="text-2xl text-gray-800">Systèmes Solaires Résidentiels</CardTitle>
+                      <CardDescription className="text-gray-600">Solutions complètes pour votre maison</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-700 mb-4">
+                        Nos systèmes solaires résidentiels sont conçus pour maximiser votre indépendance énergétique tout en réduisant vos factures d'électricité. Adaptés à tous types de toitures, ils s'intègrent parfaitement à votre habitat.
+                      </p>
+                      <ul className="space-y-2 text-gray-700">
+                        {[
+                          "Panneaux photovoltaïques haute performance", 
+                          "Systèmes connectés au réseau ou autonomes",
+                          "Monitoring en temps réel de votre production",
+                          "Installation clé en main par nos experts",
+                          "Compatible avec stockage par batteries"
+                        ].map((item, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="mr-2 mt-1 h-2 w-2 rounded-full bg-eco-green flex-shrink-0"></span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    <CardFooter className="pt-2">
+                      <Button asChild className="bg-eco-green hover:bg-eco-green/90">
+                        <Link to="/energie/systemes-residentiels">En savoir plus</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
+                <div className="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl h-[350px]">
+                  <img 
+                    src={SOLAR_PANELS}
+                    alt="Installation solaire résidentielle" 
+                    className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
+                  />
+                </div>
+              </div>
 
-              {/* Second row of tabs */}
-              <Tabs defaultValue="streets" className="w-full max-w-6xl mx-auto">
-                <TabsList className="grid grid-cols-2 gap-2 mb-12 bg-gray-100/50 p-1.5 rounded-xl">
-                  <TabsTrigger value="streets" className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300">
-                    <LampFloor className="h-5 w-5 text-eco-green" />
-                    <span>Éclairage Solaire</span>
-                  </TabsTrigger>
-                  <TabsTrigger value="pumps" className="flex items-center gap-2 data-[state=active]:bg-white data-[state=active]:shadow-md transition-all duration-300">
-                    <CloudSun className="h-5 w-5 text-eco-green" />
-                    <span>Pompes Solaires</span>
-                  </TabsTrigger>
-                </TabsList>
-                
-                <TabsContent value="streets">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div className="order-2 md:order-1">
-                      <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 overflow-hidden">
-                        <CardHeader className="pb-2">
-                          <Badge className="w-fit mb-2 bg-eco-green/10 text-eco-green hover:bg-eco-green/20">Éclairage</Badge>
-                          <CardTitle className="text-2xl text-gray-800">Éclairage Solaire Urbain</CardTitle>
-                          <CardDescription className="text-gray-600">Solutions d'éclairage autonomes et écologiques</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-700 mb-4">
-                            Nos lampadaires et systèmes d'éclairage solaires représentent une alternative durable et économique pour l'éclairage public, les parkings, les parcs et les zones résidentielles.
-                          </p>
-                          <ul className="space-y-2 text-gray-700">
-                            {[
-                              "Éclairage LED à haut rendement énergétique", 
-                              "Batteries intégrées pour fonctionnement nocturne",
-                              "Détection de mouvement et variation d'intensité",
-                              "Installation sans tranchée ni raccordement électrique",
-                              "Maintenance minimale et longue durée de vie"
-                            ].map((item, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="mr-2 mt-1 h-2 w-2 rounded-full bg-eco-green flex-shrink-0"></span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                        <CardFooter className="pt-2">
-                          <Button asChild className="bg-eco-green hover:bg-eco-green/90">
-                            <Link to="/energie/eclairage-solaire">En savoir plus</Link>
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    </div>
-                    <div className="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl h-[350px] transform transition-transform hover:scale-[1.02] duration-500">
-                      <img 
-                        src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                        alt="Éclairage solaire urbain" 
-                        className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
-                      />
-                    </div>
-                  </div>
-                </TabsContent>
-                
-                <TabsContent value="pumps">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div className="rounded-2xl overflow-hidden shadow-xl h-[350px] transform transition-transform hover:scale-[1.02] duration-500">
-                      <img 
-                        src="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                        alt="Pompe à eau solaire" 
-                        className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
-                      />
-                    </div>
-                    <div>
-                      <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50 overflow-hidden">
-                        <CardHeader className="pb-2">
-                          <Badge className="w-fit mb-2 bg-eco-blue/10 text-eco-blue hover:bg-eco-blue/20">Irrigation</Badge>
-                          <CardTitle className="text-2xl text-gray-800">Pompes à Eau Solaires</CardTitle>
-                          <CardDescription className="text-gray-600">Solutions d'irrigation et d'approvisionnement en eau</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-700 mb-4">
-                            Nos pompes à eau alimentées par énergie solaire offrent une solution fiable et économique pour l'irrigation agricole, l'abreuvement du bétail et l'approvisionnement en eau dans les zones rurales ou isolées.
-                          </p>
-                          <ul className="space-y-2 text-gray-700">
-                            {[
-                              "Pompes de surface et submersibles", 
-                              "Débit adapté à différents besoins",
-                              "Fonctionnement autonome sans carburant",
-                              "Systèmes de filtration disponibles",
-                              "Installation simple et maintenance réduite"
-                            ].map((item, index) => (
-                              <li key={index} className="flex items-start">
-                                <span className="mr-2 mt-1 h-2 w-2 rounded-full bg-eco-blue flex-shrink-0"></span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                        <CardFooter className="pt-2">
-                          <Button asChild className="bg-eco-blue hover:bg-eco-blue/90">
-                            <Link to="/energie/pompes-solaires">En savoir plus</Link>
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    </div>
-                  </div>
-                </TabsContent>
-              </Tabs>
+              {/* Stockage d'Énergie */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="rounded-2xl overflow-hidden shadow-xl h-[350px]">
+                  <img 
+                    src={BATTERY_STORAGE}
+                    alt="Système de stockage par batteries" 
+                    className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
+                  />
+                </div>
+                <div>
+                  <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+                    <CardHeader className="pb-2">
+                      <Badge className="w-fit mb-2 bg-eco-blue/10 text-eco-blue hover:bg-eco-blue/20">Stockage</Badge>
+                      <CardTitle className="text-2xl text-gray-800">Solutions de Stockage d'Énergie</CardTitle>
+                      <CardDescription className="text-gray-600">Maximisez votre autonomie énergétique</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-700 mb-4">
+                        Nos systèmes de stockage d'énergie par batteries vous permettent de stocker l'énergie solaire produite pendant la journée pour l'utiliser quand vous en avez besoin, y compris la nuit ou lors de coupures de courant.
+                      </p>
+                      <ul className="space-y-2 text-gray-700">
+                        {[
+                          "Batteries lithium-ion dernière génération", 
+                          "Systèmes évolutifs selon vos besoins",
+                          "Onduleurs hybrides intelligents",
+                          "Gestion automatisée de l'énergie",
+                          "Garantie jusqu'à 10 ans"
+                        ].map((item, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="mr-2 mt-1 h-2 w-2 rounded-full bg-eco-blue flex-shrink-0"></span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    <CardFooter className="pt-2">
+                      <Button asChild className="bg-eco-blue hover:bg-eco-blue/90">
+                        <Link to="/energie/stockage-energie">En savoir plus</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Éclairage Solaire */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="order-2 md:order-1">
+                  <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+                    <CardHeader className="pb-2">
+                      <Badge className="w-fit mb-2 bg-eco-green/10 text-eco-green hover:bg-eco-green/20">Éclairage</Badge>
+                      <CardTitle className="text-2xl text-gray-800">Éclairage Solaire Urbain</CardTitle>
+                      <CardDescription className="text-gray-600">Solutions d'éclairage autonomes et écologiques</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-700 mb-4">
+                        Nos lampadaires et systèmes d'éclairage solaires représentent une alternative durable et économique pour l'éclairage public, les parkings, les parcs et les zones résidentielles.
+                      </p>
+                      <ul className="space-y-2 text-gray-700">
+                        {[
+                          "Éclairage LED à haut rendement énergétique", 
+                          "Batteries intégrées pour fonctionnement nocturne",
+                          "Détection de mouvement et variation d'intensité",
+                          "Installation sans tranchée ni raccordement électrique",
+                          "Maintenance minimale et longue durée de vie"
+                        ].map((item, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="mr-2 mt-1 h-2 w-2 rounded-full bg-eco-green flex-shrink-0"></span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    <CardFooter className="pt-2">
+                      <Button asChild className="bg-eco-green hover:bg-eco-green/90">
+                        <Link to="/energie/eclairage-solaire">En savoir plus</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
+                <div className="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl h-[350px]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                    alt="Éclairage solaire urbain" 
+                    className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
+                  />
+                </div>
+              </div>
+
+              {/* Pompes Solaires */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="rounded-2xl overflow-hidden shadow-xl h-[350px]">
+                  <img 
+                    src="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                    alt="Pompe à eau solaire" 
+                    className="w-full h-full object-cover hover:scale-105 transition-all duration-700"
+                  />
+                </div>
+                <div>
+                  <Card className="border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+                    <CardHeader className="pb-2">
+                      <Badge className="w-fit mb-2 bg-eco-blue/10 text-eco-blue hover:bg-eco-blue/20">Irrigation</Badge>
+                      <CardTitle className="text-2xl text-gray-800">Pompes à Eau Solaires</CardTitle>
+                      <CardDescription className="text-gray-600">Solutions d'irrigation et d'approvisionnement en eau</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-700 mb-4">
+                        Nos pompes à eau alimentées par énergie solaire offrent une solution fiable et économique pour l'irrigation agricole, l'abreuvement du bétail et l'approvisionnement en eau dans les zones rurales ou isolées.
+                      </p>
+                      <ul className="space-y-2 text-gray-700">
+                        {[
+                          "Pompes de surface et submersibles", 
+                          "Débit adapté à différents besoins",
+                          "Fonctionnement autonome sans carburant",
+                          "Systèmes de filtration disponibles",
+                          "Installation simple et maintenance réduite"
+                        ].map((item, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="mr-2 mt-1 h-2 w-2 rounded-full bg-eco-blue flex-shrink-0"></span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    <CardFooter className="pt-2">
+                      <Button asChild className="bg-eco-blue hover:bg-eco-blue/90">
+                        <Link to="/energie/pompes-solaires">En savoir plus</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
